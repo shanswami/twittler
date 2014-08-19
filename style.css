@@ -1,10 +1,10 @@
 body {
 	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	padding: 300px 100px 100px 100px;
 	font-family: verdana, arial, helvetica, sans-serif;
 	color: #ccc;
 	background-color: #333;
-	text-align: center;
+	text-align: left;
 	/* part 1 of 2 centering hack */
 	}
 #content {
