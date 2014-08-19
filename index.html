@@ -5,16 +5,19 @@
     <script src="data_generator.js"></script>
     <script type="text/javascript" src="moment.js"></script>
     <link href="style.css" rel="stylesheet" media="screen">
+    <title> Shan Swami </title>
 
 
   </head>
-  <body>
-    <div><button>Get New Tweets</button></div>
-    <script>
 
+  <body>
+
+
+    <script>
       $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
+        $body.html('<h1> Twittler in Progress</h1><br></br>');
+
          // $('button').click(function() { 
           var index = streams.home.length - 1;
           while(index >= 0){
@@ -46,5 +49,7 @@
       });
 
     </script>
+<!--       <h1> Twittler </h1>
+ -->
   </body>
 </html>
