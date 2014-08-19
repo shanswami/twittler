@@ -23,9 +23,18 @@
             index -= 1;
           }
         // }
-        var refreshPage = function() {
-        
+        var newTweetTimer;
+        var tweetTimer = function(){
+          newTweetTimer = setInterval(function(){
+            var countCheck = streams.home.length - 1;
+            if (countCheck > count) {
+              numTweets = countCheck - count;
+              
+            }
+          }, 4000);           
         }
+        tweetTimer();
+
 
         // refreshPage();
 
