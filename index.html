@@ -32,6 +32,7 @@
                 var countCheck = streams.home.length - 1;
                 if (countCheck > count) {
                   numTweets = countCheck - count;
+                  $tweet.text('@' + tweet.user + ': ' + tweet.message + moment().format('h:mm:ss a'));
                   $tweet.appendTo($body);
                 }
               }, 3000);           
