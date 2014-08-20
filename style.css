@@ -4,8 +4,13 @@ h1 {
 	text-align: center;
 }
 
-a h1:hover {
-	color: #999;
+.link {
+	color: #888;
+	text-decoration: none;
+	font-weight: bold;
+}
+.link:hover {
+	cursor: pointer;
 }
 
 body {
@@ -16,11 +21,21 @@ body {
 	background-color: #333;
 	text-align: left;
 	}
-#content {
-	width: 400px; 
+
+html>body #content {
+	width: 370px; 
+	}
+
+div.tweet {
+	/*color: #eee;
+	/*border: 1px solid #f00;*/
+	/*background-color: #444;
 	padding: 10px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 5px;*/
+	/*width: 400px; */
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	margin-right: auto;
 	margin-left: auto; 	
 	background: #666;
@@ -28,10 +43,9 @@ body {
 	text-align:left; 
 	
 	width: 400px; 
-	voice-family: "\"}\"";
-	voice-family:inherit;
 	width: 370px;
-	}
-html>body #content {
-	width: 370px; 
-	}
+}
+*/.timestamp {
+	float: right;
+	font-style: italic;
+}

@@ -9,49 +9,49 @@
   </head>
 
   <body>
-
-
+    <h1>Shan Swami's Twittler</h1>
+    <br><br>
+    <div id="twitlets"></div>
     <script>
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('<h1> Twittler in Progress</h1><br></br>');
+      var index = streams.home.length - 1;
 
-          var index = streams.home.length - 1;
-          var newTweets = function(username) {
-            if(username) {
-            var count = streams.users[username].length - 1;
-            } else {
-              var count = streams.home.length - 1;
-            }
-            while(count >= 0){
-              if (username){
-              var tweet = streams.users[username][count];
-              } else {
-              var tweet = streams.home[count];
-              }
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message + moment().format('h:mm:ss a'));
-            $tweet.appendTo($body);
-            count -= 1;
-            }
-            index = streams.home.length-1;
+      var newTweets = function(username) {
+        var twitlets = $('#twitlets');
+        twitlets.empty()
+
+        var count;
+        if(username) {
+          count = streams.users[username].length - 1;
+        } else {
+          count = streams.home.length - 1;
+        }
+        while(count >= 0){
+          var tweet = null
+          if (username){
+            tweet = streams.users[username][count];
+          } else {
+            tweet = streams.home[count];
           }
-          newTweets();
-          //   var newTweetTimer;
-          //   var tweetTimer = function(){
-          //     newTweetTimer = setInterval(function(){
-          //       var countCheck = streams.home.length - 1;
-          //       if (countCheck > count) {
-          //         numTweets = countCheck - count;
-          //         $tweet.text('@' + tweet.user + ': ' + tweet.message + moment().format('h:mm:ss a'));
-          //         $tweet.appendTo($body);
-          //       }
-          //     }, 3000);           
-          //   }
-          //   tweetTimer();
-          // }
-        // }
 
+          var div = $('<div>');
+          div.addClass('tweet')
+          div.html('<span class="link" onclick="newTweets(\'' + tweet.user + '\')">@' + tweet.user + '</span>: ' + tweet.message + '<span class="timestamp">' + " " + moment().format('h:mm:ss a'));
+          div.appendTo(twitlets);
+          count -= 1;
+        }
+        if (username) {
+          var div = $('<div>');
+          div.addClass('nav');
+          div.html('<span class="link" onclick="newTweets()">Go Back</span>');
+          div.appendTo(twitlets);
+        }
+        index = streams.home.length-1;
+      }
+
+      $(document).ready(function(){
+        var body = $('body');
+        newTweets()
+          // setInterval(newTweets, 10 * 1000);
       });
 
     </script>
